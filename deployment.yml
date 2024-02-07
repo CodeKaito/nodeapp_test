@@ -10,12 +10,14 @@ spec:
     matchLabels:
       app: nodeapp
   template:
+    spec:
+      imagePullPolicy: Always
     metadata:
       labels:
         app: nodeapp 
     spec:
       containers:
       - name: nodeserver
-        image: thetips4you/nodeapp:latest
+        image: codekaito/nodeapp_k8s:latest
         ports:
         - containerPort: 3000
